@@ -13,7 +13,7 @@ a:visited {color:#CF0000;}
 
 .container {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     font-size: 57px;
