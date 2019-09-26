@@ -13,9 +13,9 @@ a:visited {color:#CF0000;}
 
 .container {
     position: absolute;
-    top: 47%;
+    top: 45%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-45%);
     font-size: 57px;
 }
 
