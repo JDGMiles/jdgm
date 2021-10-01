@@ -26,6 +26,7 @@
 
 <body style="align:center;">
   <center>
+    <p id="topspace"></p>
 
     <div id="card" style="border-style: solid; border-color: white; padding:40px;">
       My name is James Miles.
@@ -46,10 +47,12 @@
 
 <script type="text/javascript">
 
-var cardratio=1.5;
+var cardratio=1.45;
+var reduction=0.95;
 var fps=60;
 var iconsize=0.22;
 var textsize=0.1;
+var topspacesize=0.05;
 var spacersize=0.2;
 var borderwidthsize=0.005;
 var borderradiussize=0.1;
@@ -58,11 +61,13 @@ var paddingsize=0.07;
 
 function dynamicresize(){
   var scalefactor=1;
-  if(window.innerWidth>window.innerHeight*cardratio){scalefactor=0.9*window.innerHeight}
-  else{scalefactor=0.9*window.innerWidth/cardratio}
+  if(window.innerWidth>window.innerHeight*cardratio){scalefactor=reduction*window.innerHeight}
+  else{scalefactor=reduction*window.innerWidth/cardratio}
 
-  document.getElementById("card").style.height=scalefactor-2*paddingsize*scalefactor-2*borderwidthsize*scalefactor+"px";
+  document.getElementById("card").style.height=scalefactor-2*paddingsize*scalefactor-2*borderwidthsize*scalefactor-topspacesize*scalefactor+"px";
   document.getElementById("card").style.width=cardratio*scalefactor-2*paddingsize*scalefactor-2*borderwidthsize*scalefactor+"px";
+
+  document.getElementById("topspace").style.fontSize=topspacesize*scalefactor+"px";
 
   document.getElementById("card").style.fontSize=textsize*scalefactor+"px";
   document.getElementById("spacer").style.fontSize=spacersize*scalefactor+"px";
