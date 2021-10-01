@@ -2,26 +2,84 @@
 <!DOCTYPE html><html>
 
 <head>
+  <link rel="shortcut icon" href="favicon.ico">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta property="og:image" content="transistor-preview-image.png" />
   <title>James Miles</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="shortcut icon" href="favicon.ico">
+
+  <style>
+  @font-face {font-family: Liberation Serif; src: url(https://jdgmiles.github.io/LiberationSerif.woff);}
+  @font-face {font-family: Liberation Serif Bold; src: url(https://jdgmiles.github.io/LiberationSerif-Bold.woff);}
+  @font-face {font-family: Liberation Serif Italic; src: url(https://jdgmiles.github.io/LiberationSerif-Italic.woff);}
+  @font-face {font-family: Liberation Serif Bold Italic; src: url(https://jdgmiles.github.io/LiberationSerif-BoldItalic.woff);}
+
+  body {font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; background-color:black; color:white; cursor:default; text-align:center;}
+
+  ::selection {color: black; background: white;}
+
+  .grow {display:inline}
+  .grow img {transition: 0.25s ease;}
+  .grow img:hover {-webkit-transform: scale(1.3); -ms-transform: scale(1.3); transform: scale(1.4); transition: 0.25s ease;}
+</style>
+
 </head>
 
-<body class="container">
+<body style="align:center;">
+  <center>
 
-  <div style="width:735px; border-style: solid; border-color: white; border-width: 2px; border-radius: 45px; padding:40px;">
-    My name is James Miles.
-    <br><span style="font-size:90px"></span>
-    I am a mathematician, a writer,<br>a designer, and a teacher.
-    <br><br>
-    <div class="grow"><a href="https://linkedin.com/in/jimdgmiles" target="_blank"><img title="Jim Miles on LinkedIn" class="iconparams" src="linkedin.png"></a></div>
-    <div class="grow"><a href="https://github.com/JDGMiles" target="_blank"><img title="Jim Miles on Github" class="iconparams" src="github.png"></a></div>
-    <div class="grow"><a href="http://samandsam.co.uk" target="_blank"><img title="Sam&Sam Books" class="iconparams" src="samandsam.png"></a></div>
-    <div class="grow"><a href="https://www.annotranslate.com" target="_blank"><img title="Annotranslate" class="iconparams" src="annotranslate.png"></a></div>
-    <div class="grow"><a href="https://twitter.com/csjimmy" target="_blank"><img title="Jim Miles on Twitter" class="iconparams" src="twitter.png"></a></div>
-  </div>
+    <div id="card" style="border-style: solid; border-color: white; padding:40px;">
+      My name is James Miles.
+      <br><span id="spacer" style="font-size:90px"></span>
+      I am a mathematician, a writer,<br>a designer, and a teacher.
+      <br><br>
+      <div class="grow"><a href="https://linkedin.com/in/jimdgmiles" target="_blank"><img id="icon1" title="Jim Miles on LinkedIn" src="linkedin.png"></a></div>
+      <div class="grow"><a href="https://github.com/JDGMiles" target="_blank"><img id="icon2" title="Jim Miles on Github" src="github.png"></a></div>
+      <div class="grow"><a href="http://samandsam.co.uk" target="_blank"><img id="icon3" title="Sam&Sam Books" src="samandsam.png"></a></div>
+      <div class="grow"><a href="https://www.annotranslate.com" target="_blank"><img id="icon4" title="Annotranslate" src="annotranslate.png"></a></div>
+      <div class="grow"><a href="https://twitter.com/csjimmy" target="_blank"><img id="icon5" title="Jim Miles on Twitter" src="twitter.png"></a></div>
+    </div>
+
+  </center>
 </body>
 
 </html>
+
+<script type="text/javascript">
+
+var cardratio=1.5;
+var fps=60;
+var iconsize=0.22;
+var textsize=0.1;
+var spacersize=0.2;
+var borderwidthsize=0.005;
+var borderradiussize=0.1;
+var paddingsize=0.07;
+
+
+function dynamicresize(){
+  var scalefactor=1;
+  if(window.innerWidth>window.innerHeight*cardratio){scalefactor=0.9*window.innerHeight}
+  else{scalefactor=0.9*window.innerWidth/cardratio}
+
+  document.getElementById("card").style.height=scalefactor-2*paddingsize*scalefactor-2*borderwidthsize*scalefactor+"px";
+  document.getElementById("card").style.width=cardratio*scalefactor-2*paddingsize*scalefactor-2*borderwidthsize*scalefactor+"px";
+
+  document.getElementById("card").style.fontSize=textsize*scalefactor+"px";
+  document.getElementById("spacer").style.fontSize=spacersize*scalefactor+"px";
+
+  document.getElementById("icon1").style.width=iconsize*scalefactor+"px";
+  document.getElementById("icon2").style.width=iconsize*scalefactor+"px";
+  document.getElementById("icon3").style.width=iconsize*scalefactor+"px";
+  document.getElementById("icon4").style.width=iconsize*scalefactor+"px";
+  document.getElementById("icon5").style.width=iconsize*scalefactor+"px";
+
+  document.getElementById("card").style.borderWidth=borderwidthsize*scalefactor+"px";
+  document.getElementById("card").style.borderRadius=borderradiussize*scalefactor+"px";
+  document.getElementById("card").style.padding=paddingsize*scalefactor+"px";
+
+  setTimeout(dynamicresize,1000/fps);
+}
+
+dynamicresize();
+
+</script>
