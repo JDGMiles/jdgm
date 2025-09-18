@@ -15,6 +15,8 @@
 
   body {font-family: Liberation Serif, Tahoma, Arial, Helvetica, Sans-Serif; background-color:black; color:white; cursor:default; text-align:center;}
 
+  a {color:white;}
+
   ::selection {color: black; background: white;}
 
   .grow {display:inline}
@@ -30,16 +32,11 @@
 
     <div id="card" style="border-style: solid; border-color: white; padding:40px;">
       My name is James Miles.
-      <br><span id="spacer" style="font-size:90px"></span>
+      <br><span id="spacer1" style="font-size:90px"></span>
       I am a mathematician working<br>in IT, publishing, & education.
-      <br><br>
-      <div class="grow"><a href="https://linkedin.com/in/jimdgmiles" target="_blank"><img id="icon1" title="Jim Miles on LinkedIn" src="linkedin.png"></a></div>
-      <div class="grow"><a href="https://github.com/JDGMiles" target="_blank"><img id="icon2" title="Jim Miles on Github" src="github.png"></a></div>
-      <div class="grow"><a href="https://samandsam.co.uk" target="_blank"><img id="icon3" title="Sam&Sam Books" src="samandsam.png"></a></div>
-      <div class="grow"><a href="https://annotranslate.wordpress.com" target="_blank"><img id="icon4" title="Annotranslate" src="annotranslate.png"></a></div>
-      <div class="grow"><a href="https://twitter.com/csjimmy" target="_blank"><img id="icon5" title="Jim Miles on Twitter" src="twitter.png"></a></div>
+      <br><span id="spacer2" style="font-size:90px"></span>
+      Email <a href="mailto:jimdgmiles@gmail.com">jimdgmiles@gmail.com</a>.
     </div>
-
   </center>
 </body>
 
@@ -70,13 +67,8 @@ function dynamicresize(){
   document.getElementById("topspace").style.fontSize=topspacesize*scalefactor+"px";
 
   document.getElementById("card").style.fontSize=textsize*scalefactor+"px";
-  document.getElementById("spacer").style.fontSize=spacersize*scalefactor+"px";
-
-  document.getElementById("icon1").style.width=iconsize*scalefactor+"px";
-  document.getElementById("icon2").style.width=iconsize*scalefactor+"px";
-  document.getElementById("icon3").style.width=iconsize*scalefactor+"px";
-  document.getElementById("icon4").style.width=iconsize*scalefactor+"px";
-  document.getElementById("icon5").style.width=iconsize*scalefactor+"px";
+  document.getElementById("spacer1").style.fontSize=spacersize*scalefactor+"px";
+  document.getElementById("spacer2").style.fontSize=spacersize*scalefactor+"px";
 
   document.getElementById("card").style.borderWidth=borderwidthsize*scalefactor+"px";
   document.getElementById("card").style.borderRadius=borderradiussize*scalefactor+"px";
